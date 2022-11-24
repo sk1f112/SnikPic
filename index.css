@@ -33,6 +33,9 @@ body.lock {
 .header {
   padding: 40px 0;
 }
+.header__nav {
+  position: relative;
+}
 .header.active {
   position: fixed;
   top: 0;
@@ -93,6 +96,20 @@ body.lock {
   display: flex;
   list-style: none;
   gap: 40px;
+}
+.nav__line {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 20px;
+  height: 1px;
+  background: #000000;
+  transition: left 0.3s, width 0.3s;
+}
+@media (max-width: 992px) {
+  .nav__line {
+    display: none;
+  }
 }
 @media (max-width: 1200px) {
   .nav {
