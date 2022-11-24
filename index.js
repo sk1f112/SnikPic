@@ -102,3 +102,25 @@ const swiper = new Swiper(".swiper", {
 });
 
 /**********************************End Swiper*********************************************/
+/************************************Magic line nav ******************************************************/
+
+window.addEventListener('DOMContentLoaded', ()=> {
+  const nav = document.querySelector('.header__nav');
+        navLine = document.querySelector('.nav__line');
+        navItem = document.querySelectorAll('.nav__item');
+
+  navLine.style.width = `${navItem[0].offsetWidth}px`
+
+  navItem.forEach(item => {
+    item.addEventListener('mouseenter', (e)=>{
+      navLine.style.width = `${e.currentTarget.offsetWidth}px` 
+      navLine.style.left = `${e.currentTarget.offsetLeft}px` 
+      navLine.style.height = `2px` 
+    })
+    // item.addEventListener('mouseleave', (e)=>{
+    //   navLine.style.width = `${navItem[0].offsetWidth}px`
+    //   navLine.style.left = `0px` 
+    //   navLine.style.height = `1px` 
+    // })
+  })
+})
